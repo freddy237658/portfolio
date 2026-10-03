@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Sora", system-ui, sans-serif;
+  background-color: #060a14;
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(34, 211, 238, 0.08), transparent 35%),
+    radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.08), transparent 40%);
+  background-attachment: fixed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #060a14;
+}
+::-webkit-scrollbar-thumb {
+  background: #14304a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1c4562;
+}
+
+@layer components {
+  .section-eyebrow {
+    @apply inline-block text-xs font-semibold tracking-wide text-accent bg-accent/10 border border-accent/30 rounded-full px-3 py-1;
+  }
+  .section-title {
+    @apply text-2xl md:text-3xl font-bold text-ink;
+  }
+  .card {
+    @apply bg-bg-card border border-white/5 rounded-2xl;
+  }
+  .btn-primary {
+    @apply inline-flex items-center gap-2 rounded-xl bg-accent text-bg font-semibold px-5 py-3 transition hover:bg-accent-soft;
+  }
+  .btn-outline {
+    @apply inline-flex items-center gap-2 rounded-xl border border-white/15 text-ink font-semibold px-5 py-3 transition hover:border-accent/60 hover:text-accent;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+
+  @keyframes twinkle {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% { transform: translateY(0px) translateX(0px); }
+  50% { transform: translateY(20px) translateX(-15px); }
+}
+.animate-float-slow-reverse {
+  animation: float-slow-reverse 10s ease-in-out infinite;
+}
+}
