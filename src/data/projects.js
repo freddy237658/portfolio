@@ -22,7 +22,7 @@ const projects = [
     title: "Portfolio",
     description:
       "Système de gestion des employés : pointage, congés, contrats et fiches de paie.",
-    image: "/public/images/projects/portfolio.png",
+    image: "/images/projects/portfolio.png",
     tech: ["Laravel", "MySQL", "Reactjs", "Tailwind"],
     live: "http://localhost:5173/",
     github: "https://github.com/ton-pseudo/gestion-rh",

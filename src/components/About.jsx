@@ -36,7 +36,7 @@ export default function About() {
           <div className="absolute -inset-4 bg-accent/10 rounded-3xl blur-2xl" />
           <div className="relative overflow-hidden rounded-2xl border border-white/10">
             <img
-              src="/public/images/about/WhatsApp Image 2026-06-10 at 05.01.43.jpeg"
+              src="/images/about/WhatsApp Image 2026-06-10 at 05.01.43.jpeg"
               alt="Portrait"
               className="w-full object-cover grayscale transition-transform duration-500 ease-out group-hover:scale-105"
             />
