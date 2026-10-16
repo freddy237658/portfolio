@@ -1,18 +1,27 @@
+
+// "id" relie chaque expérience à sa période traduite
+// (experience.items.<id>.period). Titre et entreprise sont des noms
+// propres, identiques dans les 2 langues.
 const experience = [
   {
-    period: "Jan 2022 - Présent",
-    title: "SOFTWARE ENGINEER I",
-    company: "Teton Private Ltd.",
+    id: "nkcl",
+    title: "developpeur web ",
+    company: "BEST CORP",
   },
   {
-    period: "Jun 2021 - Jan 2022",
-    title: "FULLSTACK DEVELOPER",
-    company: "Fiverr (freelance)",
+    id: "fiverr",
+    title: "Stage Professionnel en développement web et mobile",
+    company: "NKCL Market,",
   },
   {
-    period: "Jan 2018 - Présent",
-    title: "SELF EMPLOYED",
-    company: "Code and build something in everyday.",
+    id: "self",
+    title: "Stage accademique en développement web et mobile",
+    company: "Ctec Sarl",
+  },
+  {
+    id: "self",
+    title: "Stage en développement web",
+    company: "Camaroes sarl",
   },
 ];
 

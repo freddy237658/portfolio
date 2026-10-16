@@ -1,23 +1,23 @@
+
+// "id" relie chaque formation à son texte traduit (formation.items.<id> :
+// degree, school, status). "period" et "ongoing" sont indépendants de la
+// langue : "ongoing" vaut true si la formation est en cours (couleur du statut).
 const education = [
   {
-    degree: "Licence en Génie Logiciel",
-    school: "Institut Universitaire de la cote de Douala",
+    id: "licence",
     period: "2025 - 2026",
-    status: "Obtenu",
+    ongoing: false,
   },
   {
-    degree: "BTS en Génie Logiciel",
-    school: "Institut Universitaire de la cote de Douala",
+    id: "bts",
     period: "2023 - 2025",
-    status: "Obtenu",
+    ongoing: false,
   },
   {
-    degree: "Baccalauréat Scientifique",
-    school: "Complexe Scolaire Bilingue La Bourgeonniere ",
+    id: "bac",
     period: "2022 - 2023",
-    status: "Obtenu",
+    ongoing: false,
   },
 ];
-
 
 export default education;

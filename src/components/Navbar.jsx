@@ -1,20 +1,23 @@
 import { useEffect, useState } from "react";
 import { Github, Linkedin, Send, Menu, X } from "lucide-react";
+import { useLanguage } from "../i18n/LanguageContext.jsx";
+import LanguageToggle from "./LanguageToggle.jsx";
 
 const links = [
-  { 
-    label: "Accueil", 
+  {
+    labelKey: "nav.home",
     href: "#accueil"
    },
-   
-  { label: "À propos", href: "#apropos" },
-  { label: "Compétences", href: "#competences" },
-  { label: "Projets", href: "#projets" },
-  { label: "Formation", href: "#formation" },
-  { label: "Contact", href: "#contact" },
+
+  { labelKey: "nav.about", href: "#apropos" },
+  { labelKey: "nav.skills", href: "#competences" },
+  { labelKey: "nav.projects", href: "#projets" },
+  { labelKey: "nav.education", href: "#formation" },
+  { labelKey: "nav.contact", href: "#contact" },
 ];
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -38,14 +41,15 @@ export default function Navbar() {
         <ul className="hidden md:flex items-center gap-8 text-sm text-ink-muted">
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="hover:text-accent transition-colors" >
-                {l.label}
+              <a href={l.href} className="nav-link hover:text-accent transition-colors" >
+                {t(l.labelKey)}
               </a>
             </li>
           ))}
         </ul>
 
         <div className="hidden md:flex items-center gap-3">
+          <LanguageToggle />
           <a
             href="https://github.com/ton-pseudo"
             target="_blank"
@@ -65,14 +69,14 @@ export default function Navbar() {
             <Linkedin size={18} />
           </a>
           <a href="#contact" className="btn-primary !px-4 !py-2 text-sm">
-            <Send size={16} /> Me contacter
+            <Send size={16} /> {t("nav.contactMe")}
           </a>
         </div>
 
         <button
           className="md:hidden text-ink"
           onClick={() => setOpen((v) => !v)}
-          aria-label="Ouvrir le menu"
+          aria-label={open ? t("nav.closeMenu") : t("nav.openMenu")}
         >
           {open ? <X size={26} /> : <Menu size={26} />}
         </button>
@@ -80,6 +84,9 @@ export default function Navbar() {
 
       {open && (
         <div className="md:hidden px-6 pb-6 flex flex-col gap-4 bg-bg/95 border-b border-white/5">
+          <div className="self-start">
+            <LanguageToggle />
+          </div>
           {links.map((l) => (
             <a
               key={l.href}
@@ -87,11 +94,11 @@ export default function Navbar() {
               onClick={() => setOpen(false)}
               className="text-ink-muted hover:text-accent transition-colors"
             >
-              {l.label}
+              {t(l.labelKey)}
             </a>
           ))}
           <a href="#contact" onClick={() => setOpen(false)} className="btn-primary justify-center">
-            <Send size={16} /> Me contacter
+            <Send size={16} /> {t("nav.contactMe")}
           </a>
         </div>
       )}

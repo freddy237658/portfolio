@@ -1,16 +1,18 @@
 import { useState } from "react";
 import skills from "../data/skills.js";
+import { useLanguage } from "../i18n/LanguageContext.jsx";
 
 
 export default function Skills() {
+  const { t } = useLanguage();
   const [paused, setPaused] = useState(false);
   // On duplique la liste pour créer une boucle infinie sans coupure.
   const loop = [...skills, ...skills];
 
   return (
     <section id="competences" className="max-w-7xl mx-auto px-6 py-20">
-      <span className="section-eyebrow">Compétences</span>
-      <h2 className="section-title mt-4 mb-10">Mes compétences</h2>
+      <span className="section-eyebrow">{t("skills.eyebrow")}</span>
+      <h2 className="section-title mt-4 mb-10">{t("skills.title")}</h2>
 
       <div
         className="relative overflow-hidden"

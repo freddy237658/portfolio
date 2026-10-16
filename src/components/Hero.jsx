@@ -1,5 +1,7 @@
 import { Rocket, Send, Github, Linkedin, MousePointer2, Database, Code2 } from "lucide-react";
 import { SiReact, SiLaravel } from "react-icons/si";
+import { useLanguage } from "../i18n/LanguageContext.jsx";
+import CvButton from "./CvButton.jsx";
 
 // Génère une position fixe pour chaque étoile (évite qu'elles bougent au re-render)
 const stars = Array.from({ length: 80 }, (_, i) => ({
@@ -12,6 +14,8 @@ const stars = Array.from({ length: 80 }, (_, i) => ({
 }));
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="accueil"
@@ -53,44 +57,45 @@ export default function Hero() {
 
       {/* Texte */}
       <div className="relative z-10">
-        <span className="section-eyebrow mb-6">● Disponible pour de nouveaux projets</span>
+        <span className="section-eyebrow mb-6">● {t("hero.badge")}</span>
 
-        <p className="mt-6 text-ink-muted text-lg"> 👋 Bonjour, je suis</p>
+        <p className="mt-6 text-ink-muted text-lg"> 👋 {t("hero.greeting")}</p>
         <h1 className="text-5xl md:text-8xl font-extrabold leading-tight mt-2">
           FREDDY
           <br />
           <span className="text-accent">NYA .</span>
         </h1>
         <p className="mt-4 text-xl font-semibold text-accent">
-          Full-Stack <span className="text-ink font-normal">Web Developer</span>
+          {t("hero.rolePrefix")} <span className="text-ink font-normal">{t("hero.roleSuffix")}</span>
         </p>
 
         <p className="mt-5 text-ink-muted max-w-md leading-relaxed">
-          Je conçois et développe des applications web modernes, performantes et
-          adaptées aux besoins des entreprises. Spécialisé dans le développement
-          frontend avec <span className="text-accent">React</span> et backend avec{" "}
+          {t("hero.descriptionStart")}{" "}
+          <span className="text-accent">React</span>{" "}
+          {t("hero.descriptionMiddle")}{" "}
           <span className="text-accent">Laravel</span>.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
           <a href="#projets" className="btn-primary">
-            <Rocket size={18} /> Voir mes projets
+            <Rocket size={18} /> {t("hero.viewProjects")}
           </a>
           <a href="#contact" className="btn-outline">
-            <Send size={18} /> Me contacter
+            <Send size={18} /> {t("hero.contactMe")}
           </a>
+          <CvButton />
         </div>
 
         <div className="mt-4 flex flex-wrap gap-4">
-          
-           <a href="https://github.com/ton-pseudo"
+
+           <a href="https://github.com/freddy237658"
             target="_blank"
             rel="noreferrer"
             className="btn-outline !border-white/10"
           >
             <Github size={18} /> GitHub
           </a>
-          <a href="https://linkedin.com/in/ton-profil"
+          <a href="https://www.linkedin.com/in/freddy-nya-277483346?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
             target="_blank"
             rel="noreferrer"
             className="btn-outline !border-white/10"
@@ -126,7 +131,7 @@ export default function Hero() {
 
         <div className="absolute bottom-0 flex flex-col items-center gap-2 text-ink-muted text-sm">
           <MousePointer2 size={18} className="animate-float" />
-          Découvrir mon univers
+          {t("hero.discover")}
         </div>
       </div>
     </section>

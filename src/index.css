@@ -45,6 +45,17 @@ body {
   .btn-outline {
     @apply inline-flex items-center gap-2 rounded-xl border border-white/15 text-ink font-semibold px-5 py-3 transition hover:border-accent/60 hover:text-accent;
   }
+  .nav-link {
+    @apply relative inline-block;
+  }
+  .nav-link::after {
+    content: "";
+    @apply absolute left-0 -bottom-1 h-0.5 w-full origin-left scale-x-0 rounded-full bg-accent transition-transform duration-300 ease-out;
+  }
+  .nav-link:hover::after,
+  .nav-link:focus-visible::after {
+    @apply scale-x-100;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

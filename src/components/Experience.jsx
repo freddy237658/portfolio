@@ -1,11 +1,14 @@
 import { User, Laptop } from "lucide-react";
 import experience from "../data/experience.js";
+import { useLanguage } from "../i18n/LanguageContext.jsx";
 
 export default function Experience() {
+  const { t } = useLanguage();
+
   return (
     <section id="experiences" className="max-w-7xl mx-auto px-6 py-20">
-      <span className="section-eyebrow">Expériences</span>
-      <h2 className="section-title mt-4 mb-10">Mon parcours professionnel</h2>
+      <span className="section-eyebrow">{t("experience.eyebrow")}</span>
+      <h2 className="section-title mt-4 mb-10">{t("experience.title")}</h2>
 
       <div className="grid md:grid-cols-2 gap-12 items-center">
         {/* Illustration animée */}
@@ -22,11 +25,11 @@ export default function Experience() {
         <div className="space-y-5">
           {experience.map((exp) => (
             <div
-              key={exp.title}
+              key={exp.id}
               className="card p-5 hover:border-accent/30 transition-colors"
             >
               <p className="text-emerald-400 text-sm font-medium text-center mb-4">
-                ({exp.period})
+                ({t(`experience.items.${exp.id}.period`)})
               </p>
               <div className="flex items-start gap-4">
                 <div className="w-11 h-11 rounded-xl bg-accent/10 border border-accent/30 flex items-center justify-center shrink-0">
