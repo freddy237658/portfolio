@@ -58,14 +58,7 @@ body {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  * {
-    animation-duration: 0.001ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.001ms !important;
-  }
-
-  @keyframes twinkle {
+@keyframes twinkle {
   0%, 100% { opacity: 0.2; }
   50% { opacity: 1; }
 }
@@ -88,4 +81,40 @@ body {
 .animate-float-slow-reverse {
   animation: float-slow-reverse 10s ease-in-out infinite;
 }
+
+/* Section compétences : défilement automatique sur ordinateur,
+   défilement tactile (swipe) sur téléphone / tablette. */
+.skills-marquee {
+  overflow: hidden;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .skills-marquee {
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x proximity;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 0.5rem;
+  }
+  .skills-marquee::-webkit-scrollbar {
+    display: none;
+  }
+  .skills-track {
+    animation: none;
+  }
+  .skills-track [data-duplicate] {
+    display: none;
+  }
+  .skills-fade {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
 }

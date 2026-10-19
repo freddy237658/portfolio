@@ -15,24 +15,27 @@ export default function Skills() {
       <h2 className="section-title mt-4 mb-10">{t("skills.title")}</h2>
 
       <div
-        className="relative overflow-hidden"
-        onMouseEnter={() => setPaused(true)}
-        onMouseLeave={() => setPaused(false)}
+        className="skills-marquee relative"
+        onPointerEnter={(e) => e.pointerType === "mouse" && setPaused(true)}
+        onPointerLeave={(e) => e.pointerType === "mouse" && setPaused(false)}
       >
         {/* dégradés sur les bords pour un fondu propre */}
-        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-bg to-transparent z-10" />
-        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-bg to-transparent z-10" />
+        <div className="skills-fade pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-bg to-transparent z-10" />
+        <div className="skills-fade pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-bg to-transparent z-10" />
 
         <div
-          className="flex gap-5 w-max animate-marquee"
+          className="skills-track flex gap-5 w-max animate-marquee"
           style={{ animationPlayState: paused ? "paused" : "running" }}
         >
           {loop.map((skill, i) => {
             const Icon = skill.icon;
+            const isDuplicate = i >= skills.length;
             return (
               <div
                 key={`${skill.name}-${i}`}
-                className="group flex flex-col items-center justify-center gap-3 w-32 h-32 shrink-0 rounded-2xl bg-bg-card border border-white/5 transition-transform duration-300 hover:scale-125 hover:z-20 hover:border-accent/40 hover:shadow-[0_0_30px_-8px_rgba(34,211,238,0.5)]"
+                data-duplicate={isDuplicate ? "true" : undefined}
+                aria-hidden={isDuplicate || undefined}
+                className="group snap-start flex flex-col items-center justify-center gap-3 w-32 h-32 shrink-0 rounded-2xl bg-bg-card border border-white/5 transition-transform duration-300 hover:scale-125 hover:z-20 hover:border-accent/40 hover:shadow-[0_0_30px_-8px_rgba(34,211,238,0.5)]"
               >
                 <Icon
                   size={34}
