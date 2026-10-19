@@ -25,7 +25,7 @@ export default function About() {
             {t("about.p2")}
           </p>
 
-          <CvButton className="btn-primary mt-6" />
+          <CvButton href="/cv/cv-freddy.pdf" className="btn-primary mt-6" />
 
           <div className="grid grid-cols-2 gap-4 mt-10">
             {stats.map((s) => (

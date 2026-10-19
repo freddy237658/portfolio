@@ -10,7 +10,7 @@ export default function ProjectsPage() {
     <main className="max-w-7xl mx-auto px-6 py-16">
       <a href="#accueil" className="btn-outline !px-4 !py-2 text-sm">
         <ArrowLeft size={16} /> {t("projectsPage.back")}
-      </a>
+      </a><br />
 
       <span className="section-eyebrow mt-10">{t("projectsPage.eyebrow")}</span>
       <h1 className="section-title mt-4">{t("projectsPage.title")}</h1>

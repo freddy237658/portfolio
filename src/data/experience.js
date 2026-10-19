@@ -4,22 +4,22 @@
 // propres, identiques dans les 2 langues.
 const experience = [
   {
-    id: "nkcl",
-    title: "developpeur web ",
+    id: "bestcorp",
+    title: "developpeur web et ingenieur logiciel",
     company: "BEST CORP",
   },
   {
-    id: "fiverr",
+    id: "nkcl",
     title: "Stage Professionnel en développement web et mobile",
     company: "NKCL Market,",
   },
   {
-    id: "self",
+    id: "Ctec",
     title: "Stage accademique en développement web et mobile",
     company: "Ctec Sarl",
   },
   {
-    id: "self",
+    id: "Camaroes",
     title: "Stage en développement web",
     company: "Camaroes sarl",
   },

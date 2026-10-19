@@ -106,9 +106,11 @@ const en = {
     eyebrow: "Experience",
     title: "My work experience",
     items: {
+      bestcorp: { period: "September 2026 - Present" },
+      Ctec: { period: "October 2026 - June 2026" },
       nkcl: { period: "August to October 2025" },
-      fiverr: { period: "Jun 2021 - Jan 2022" },
-      self: { period: "Jan 2018 - Present" },
+      fiverr: { period: "August 2025 - October 2025" },
+      Camaroes: { period: "July 2024 - September 2024" },
     },
   },
   why: {

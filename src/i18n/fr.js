@@ -107,9 +107,12 @@ const fr = {
     eyebrow: "Expériences",
     title: "Mon parcours professionnel",
     items: {
+     
+      bestcorp: { period: "septembre 2026 - present" },
+      Ctec: { period: "octobre 2026 - juin 2026"},
       nkcl: { period: "Août à Octobre 2025" },
-      fiverr: { period: "Jun 2021 - Jan 2022" },
-      self: { period: "Jan 2018 - Présent" },
+      fiverr: { period: "Août 2025 - Octobre 2025" },
+      Camaroes: { period: "Juillet 2024 - Septembre 2024" }, 
     },
   },
   why: {

@@ -77,7 +77,7 @@ export default function Hero() {
         </p>
 
         <div className="mt-8 flex flex-wrap gap-4">
-          <a href="#projets" className="btn-primary">
+          <a href="/cv/cv-freddy.pdf" className="btn-primary">
             <Rocket size={18} /> {t("hero.viewProjects")}
           </a>
           <a href="#contact" className="btn-outline">
